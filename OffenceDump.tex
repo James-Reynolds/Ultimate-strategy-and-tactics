@@ -36,19 +36,86 @@
 
 %\printclassoptions
 
-Defence wins games 
-and offence loses them 
-because,   
-having more turnovers 
-than the other team 
-results in
-scoring fewer goals\footnote{
-There are 
-some edge cases 
-(e.g. so windy that 
+
+\begin{marginfigure}
+\begin{equation}
+A - C = 1 - B - D
+\end{equation}
+\end{marginfigure}
+\begin{marginfigure}
+\begin{equation}
+A - C = B - D
+\end{equation}
+\end{marginfigure}
+
+Defence wins games, 
+offence loses them. 
+This is because,
+in ultimate,
+the difference
+in the number 
+times possession
+is lost 
+(i.e. a turnover)
+by each team
+is related to 
+the difference in 
+the scores\footnote{
+Let A 
+be the score of 
+the team with the
+highest score,
+and  B be the 
+score of the 
+other team; 
+and let 
+C and D
+be the number
+times possession
+is lost 
+by the team
+with the highest score
+and the other team, 
+again respectively. 
+Then, 
+during the first half, 
+at the end 
+of a point when 
+A + B is odd
+or even, 
+respectively, 
+equations 1 
+or 2 
+apply.}\footnote{
+Yes, 
+it gets more complicated 
+during the second half,
+based on 
+which team 
+pulled first 
+and which 
+team scored 
+the last point 
+before half.  
+Let's not 
+get into that here.}. 
+A team 
+that (somehow)
+never loses 
+possession across
+an entire game 
+will defeat 
+a team 
+that loses possession 
+only once or twice\footnote{
+Again, 
+there are edge cases, 
+such as if 
 no one can score 
-upwind, so the
-flip decides the game.)}. 
+upwind at all.}.
+
+
+ 
 Hence, 
 being able 
 to retain possession 
@@ -61,11 +128,28 @@ the job
 is only half done - 
 your team still 
 needs to convert 
-the block into a goal!}. 
+the block into a goal!},
+especially on 
+points when 
+your team 
+receives 
+the pull. 
+A 'dump' throw,
+or 'dumping it' 
+back to one of the handlers, 
+usually refers 
+to a short 
+throw, 
+often backwards,
+made to 
+reset the stall count 
+and retain possession 
+of the disc. 
 Being able 
 to throw a dump 
 is therefore a 
-key skill for any
+key skill 
+for almost any
 ultimate player. 
 If you're a handler 
 being able to 
@@ -74,11 +158,15 @@ and then receive a dump
 is vital too\footnote{
 With the rare exception of 
 if you are on the defence team 
-and the team's strategy is to 
-score as soon as possible 
+and the team's strategy is 
+to score 
+as soon as possible 
 after getting a turnover 
-(e.g. D and huck and D).}
-
+and/or to accept 
+higher risks
+(e.g. run and gun, 
+Huck and D,  
+etc.).}.
 
 This document is  
 a two-pager about 
@@ -101,47 +189,42 @@ dumps to generate
 offensive opportunities 
 is discussed. 
 
+There are 
+many approaches 
+and thoughts 
+about ultimate 
+strategy 
+and tactics. 
+Many
+may disagree 
+with what is 
+written here. 
+These are just 
+my thoughts. 
+Please feel free to 
+fork or send pull requests.
+
 \section{What is a dump and why is it important?}\label{sec:what_is_a_dump}
-What is a dump\footnote{
-A backwards pass? 
-Sometimes.  
-A short pass? 
-Often. 
-A pass back to a handler? 
-Usually.}? 
-It can mean a lot of things, 
-but usually 
-it refers to 
-'dumping it' 
-back to one of the handlers 
-so as to 
-reset the stall count 
-and retain possession 
+A backwards pass?  
+A short pass?  
+A pass 
+to a handler?
+It might be 
+one 
+or all 
+of these, 
+but typically 
+a dump is about 
+reseting the stall count, 
+retaining possession, 
+and/or improving the position
 of the disc.  
-In short,
-it is 
-a high-percentage 
-pass, 
-made to reset 
-the stall count 
-and so retain possession\footnote{
-There are three ways 
-for a turnover to occur:
-1) the stall count reaches 10; 
-2) a pass is incomplete; or
-3) a pass is intercepted. 
-Throwing a dump deals 
-with all three as:
-it gets the stall count back to zero; 
-dumps are 
-generally easier throws 
-to make; and 
-there is not much that a defender 
-can do about a well thrown dump, 
-as they are difficult to intercept. }.  
-It is important because 
-it impacts, 
-and to an extend dictates, 
+Being able 
+to complete 
+dump throws 
+is important because 
+this impacts, 
+and to an extent dictates, 
 whether your team can 
 play low-risk, high-completion 
 offense. 
@@ -151,7 +234,7 @@ and wait for
 good opportunities.  
 Without a reliable dump-set, 
 you'll likely 
-have to play higher-risk 
+need to play higher-risk 
 offence\footnote{
 Huck-and-zone anyone? 
 Not that there is anything 
@@ -161,72 +244,126 @@ Just that it
 will not 
 work against teams
 who don't turn the disc over much.}.  
-Unfortunately, it's time for...
 
-\subsection{...some probability}
-\label{sec:probability}
+Unfortunately, it's time for some more maths. 
 The probability 
-of scoring  
+of losing possession
 is a function of 
 the number of passes made 
 and the completion rate of 
-each of those passes\footnote{
-For example, 
-you might catch the pull 
-and then immediately 
-throw it deep 
-to the endzone.
-Maybe there is a 
-40\% chance 
-of someone on your team 
-catching it for a goal. 
-Alternatively, 
-your team might 
-score with five 
-lower-risk throws. 
-However, if each has 
-a 85\% completion rate
-the chance of scoring is only 44\%, 
-as 
+each of those passes.
+For example,  
+if it takes 5 throws
+to score and 
+each has a 85\% chance 
+of being completed
+the overall chance 
+of scoring is only 44\%
+\begin{marginfigure}
 \begin{equation} 0.85^5 = 0.44 \end{equation}
-That single high-risk 
-throw isn't looking to bad actually...}. 
-Different players 
+\end{marginfigure} 
+In comparison
+a 50-50 huck
+to the endzone
+straight off the pull 
+isn't looking too bad.
+%Of course, 
+%if your team scores 
+%you actually do 
+%'lose' possession 
+%of the disc, 
+%in that your 
+%team then 
+%has to pull 
+%the disc 
+%to your opposition; 
+%but your score 
+%goes up 
+%so that is good.
+Reality is more complex, 
+with different players 
 on your team 
-will have 
-different completion rates, 
-and these too 
-will be impacted by 
-whether they are 
-taking high- or low-risk 
-options\footnote{
-For example, if the 
-dump completion 
-rate is low the handlers 
-might as well 
-send a low-percentage huck 
-given that if they take 
-a lower risk option 
-there's still high chance 
-there will be
-a turning over anyway.}, 
-so it all gets a bit complicated.
-But, 
-in general, 
-if the completion rate 
+having different 
+completion rates 
+for different throws 
+and situations. 
+Then there are the 
+\smallcaps{second-order factors},  
+were in someone who could play a
+low-risk, high-completion 
+style of ultimate 
+is instead taking riskier options 
+because the average 
+completion rate is 
+ow enough that 
+they might as well
+take some high-risk
+shots to score quickly, 
+as there is likely to be 
+a turnover soon anyway.
+But, in general, 
+if the average completion rate 
 of your entire team goes up, 
-it will 
-make sense for everyone 
+it will make sense 
+for everyone 
 to take less risky options\footnote{
 Again, returning to the one high-risk  
 versus five lower-risk throws example, 
 if the completion rate goes up 
-to 90\%, we are now looking at: 
-\begin{equation} 0.9^5 = 0.59 \end{equation}
-...and suddenly that 40\% huck 
-isn't looking too good anymore.
-}, which may further 
+to 95\%, we are now looking at: 
+\begin{equation} 0.95^5 = 0.77 \end{equation}
+...and suddenly that 50-50\% huck 
+isn't looking too good anymore.}, 
+which may further 
 increase the completion rate
+and chance of scoring
+instead of 
+(eventually)
+losing possesion. 
+Another way of looking at this 
+is: (1) ultimate
+is usually stacked towards 
+the offence\footnote{
+Unless the weather is 
+excessively 
+windy.} 
+because (1a) it is non-contact 
+and (1b) there is 
+typically 
+somewhere
+to throw the disc to 
+such that a defender 
+can't get to it without running 
+through the receive; 
+and (2) all defences 
+will eventually 
+break down 
+as it is impossible to 
+cover everything 
+for ever. 
+Hence, 
+(3) if your team 
+can just hold onto
+possession 
+long enough
+a low-risk
+opportunity to 
+advance the disc 
+and/or score a goal 
+is likely to 
+become 
+available. 
+
+\section{Against zone defenses}
+\subsection{Positioning}
+\label{sec:zone_positioning}
+
+\subsection{Engaging and completing}
+\label{sec:zone_engaging}
+
+\subsection{Gaining an advantage from dumping}
+\label{sec:zone_advantage}
+
 
 \section{Against person-match}
 \subsection{Positioning}
@@ -241,15 +378,8 @@ increase the completion rate
 
 
 
-\section{Against zones}
-\subsection{Positioning}
-\label{sec:zone_positioning}
 
-\subsection{Engaging and completing}
-\label{sec:zone_engaging}
-
-\subsection{Gaining an advantage from dumping}
-\label{sec:zone_advantage}
+\subsection{No one expects the dump to cut deep}
 
 
 
